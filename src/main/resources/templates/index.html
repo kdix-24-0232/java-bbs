@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BBS</title>
+</head>
+<body>
+<h1>掲示板</h1>
+
+<form action="/create" method="post">
+    タイトル: <input type="text" name="title"><br>
+    内容: <input type="text" name="content"><br>
+    <button type="submit">投稿</button>
+</form>
+
+<hr>
+
+<div th:each="post : ${posts}">
+    <h3 th:text="${post.title}"></h3>
+    <p th:text="${post.content}"></p>
+    <hr>
+</div>
+
+</body>
+</html>
